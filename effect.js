@@ -196,33 +196,30 @@ $("document").ready(function () {
             .fadeOut("fast")
             .promise()
             .done(function () {
-                $(".message").fadeIn("10000");
+                $(".message").fadeIn(2000); // Slower fade-in for the message
             });
-
-        var i;
 
         function msgLoop(i) {
             $("p:nth-child(" + i + ")")
-                .fadeOut("10000")
-                .delay(10000)
+                .fadeOut(3000) // Slower fade-out
+                .delay(3000) // Longer delay
                 .promise()
                 .done(function () {
                     i = i + 1;
                     $("p:nth-child(" + i + ")")
-                        .fadeIn(10000) // Slower fade-in
-                        .delay(10000); // Longer delay
+                        .fadeIn(3000) // Slower fade-in
+                        .delay(2000); // Longer delay
                     if (i == 50) {
                         $("p:nth-child(49)")
-                            .fadeOut("10000")
+                            .fadeOut(3000) // Slower fade-out
                             .promise()
                             .done(function () {
-                                $(".cake").fadeIn("10000");
+                                $(".cake").fadeIn(2000); // Slower fade-in for the cake
                             });
                     } else {
                         msgLoop(i);
                     }
                 });
-            // body...
         }
 
         msgLoop(0);
