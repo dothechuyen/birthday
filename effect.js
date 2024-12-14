@@ -202,13 +202,13 @@ $("document").ready(function () {
         function msgLoop(i) {
             $("p:nth-child(" + i + ")")
                 .fadeOut("slow") // Slower fade-out
-                .delay(3000) // Longer delay
+                .delay(2000) // Longer delay
                 .promise()
                 .done(function () {
                     i = i + 1;
                     $("p:nth-child(" + i + ")")
                         .fadeIn("slow") // Slower fade-in
-                        .delay(2000); // Longer delay
+                        .delay(1000); // Longer delay
                     if (i == 50) {
                         $("p:nth-child(49)")
                             .fadeOut(3000) // Slower fade-out
