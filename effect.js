@@ -196,18 +196,18 @@ $("document").ready(function () {
             .fadeOut("fast")
             .promise()
             .done(function () {
-                $(".message").fadeIn(2000); // Slower fade-in for the message
+                $(".message").fadeIn("slow"); // Slower fade-in for the message
             });
 
         function msgLoop(i) {
             $("p:nth-child(" + i + ")")
-                .fadeOut(3000) // Slower fade-out
+                .fadeOut("slow") // Slower fade-out
                 .delay(3000) // Longer delay
                 .promise()
                 .done(function () {
                     i = i + 1;
                     $("p:nth-child(" + i + ")")
-                        .fadeIn(3000) // Slower fade-in
+                        .fadeIn("slow") // Slower fade-in
                         .delay(2000); // Longer delay
                     if (i == 50) {
                         $("p:nth-child(49)")
